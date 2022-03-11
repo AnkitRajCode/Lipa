@@ -9,11 +9,12 @@ module.exports = {
         '128': '28rem',
         '90': '22rem',
       },
+      lineHeight: {
+        '12': '4.5rem',
+      },
       fontFamily: {
-        montserrat:['Montserrat', 'sans-serif'],
-        poppins:['Poppins', 'sans-serif'],
-        quicksand:['Quicksand', 'sans-serif'],
-        roboto:['Roboto', 'sans-serif'],
+        'yaro': ['Yaro Cut', 'curier new'],
+        'kanyon': ['kanyon', 'san serif'],
       }
     },
   },

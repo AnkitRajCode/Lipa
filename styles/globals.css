@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@font-face {
+    font-family: 'Yaro Cut';
+    src: url(../Assets/YaroCut.ttf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'Kanyon';
+    src: url(../Assets/Fontspring-DEMO-kanyon-regular.otf) format('opentype');
+    font-weight: normal;
+    font-style: normal;
+}
