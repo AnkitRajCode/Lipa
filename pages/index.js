@@ -5,13 +5,30 @@ import Contact from '../components/Contact'
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
 
+
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
 import Image from 'next/image';
 import Footer from '../components/Footer';
 
-export default function Home() {
+
+export const getStaticProps = async (context) => { 
+
+
+  const initialRes = await fetch(`https://lipa-backend.herokuapp.com/home-page`);
+  const data = await initialRes.json(); 
+
+  return {
+    props: {
+      data,
+    },
+  };
+};
+
+
+export default function Home(data) {
+  console.log(data);
   return (
     <>
       <Head>
@@ -20,16 +37,17 @@ export default function Home() {
       <div className="">
         <Navbar />
         {/* Header */}
-        <div className="h-screen w-full bg-center bg-cover flex" 
-          style={{backgroundImage: `url(/Backgrounds/Landing.jpg)`}}
+        <div className="h-screen w-full bg-center bg-cover flex"
+          style={{ backgroundImage: `url(/Backgrounds/Landing.jpg)` }}
         >
           {/* Header Text */}
           <div className="md:w-1/2 font-kanyon font-semibold flex justify-end pr-20 items-center h-full text-6xl text-white leading-12">
-            Cashless <br/> payments <br/> hurt small <br/> businesses
+            Cashless <br /> payments <br /> hurt small <br /> businesses            
+            
           </div>
           {/* Header Slider */}
           <div className="md:w-1/2 flex justify-end items-center h-full">
-          <Swiper
+            <Swiper
               slidesPerView={1}
               pagination={{
                 clickable: true,
@@ -37,34 +55,34 @@ export default function Home() {
               className="w-96 h-80 rounded-3xl bg-white"
               modules={[Pagination]}
             >
-                  <SwiperSlide >
-                    <div className=''>
-                      Cashless payments
-                    </div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div>later on</div>
-                  </SwiperSlide>
-                  <SwiperSlide >
-                    <div>20% more</div>
-                  </SwiperSlide>
+              <SwiperSlide >
+                <div className=''>
+                  Cashless payments
+                </div>
+              </SwiperSlide>
+              <SwiperSlide >
+                <div>later on</div>
+              </SwiperSlide>
+              <SwiperSlide >
+                <div>20% more</div>
+              </SwiperSlide>
             </Swiper>
           </div>
         </div>
         {/* Section 1 - vertical scroll */}
         <div className="">
-        <Swiper
-          direction={"vertical"}
-          pagination={{
-            clickable: true,
-          }}
-          modules={[Pagination]}
-          className="h-96 w-full"
-        >
-          <SwiperSlide>Slide 1</SwiperSlide>
-          <SwiperSlide>Slide 2</SwiperSlide>
-          <SwiperSlide>Slide 3</SwiperSlide>
-        </Swiper>
+          <Swiper
+            direction={"vertical"}
+            pagination={{
+              clickable: true,
+            }}
+            modules={[Pagination]}
+            className="h-96 w-full"
+          >
+            <SwiperSlide>Slide 1</SwiperSlide>
+            <SwiperSlide>Slide 2</SwiperSlide>
+            <SwiperSlide>Slide 3</SwiperSlide>
+          </Swiper>
         </div>
         {/* Businesses need */}
         <div className="">
@@ -87,7 +105,7 @@ export default function Home() {
         {/* welcome to lipa */}
         <div className="h-screen flex flex-col justify-center items-center">
           <div>welcome to lipa</div>
-          <div>lipa reimageines <br/> cashless payments</div>
+          <div>lipa reimageines <br /> cashless payments</div>
         </div>
         {/* choose your Wallet */}
         <div className="">
@@ -133,5 +151,9 @@ export default function Home() {
         <Footer />
       </div>
     </>
-  )
-}
+  );
+};
+
+
+
+
