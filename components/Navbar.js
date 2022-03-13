@@ -1,3 +1,4 @@
+import Link from "next/link";
 import React, { useState } from "react";
 
 const Navbar = () => {
@@ -12,8 +13,10 @@ const Navbar = () => {
                 ></i>
                 <i className="fa-solid fa-bars ml-10"></i>
                 {dropdown && <div className="absolute right-48 top-20 bg-white w-40 text-black rounded-lg">
-                    <div className="text-xl py-2 w-full hover:bg-gray-400 cursor-pointer text-center rounded-lg">English</div>
-                    <div className="text-xl py-2 w-full hover:bg-gray-400 cursor-pointer text-center rounded-lg">French</div>
+                    <Link href={"/"} locale="en-US" >
+                    <div className="text-xl py-2 w-full hover:bg-gray-400 cursor-pointer text-center rounded-lg">English</div></Link>
+                    <Link href={"/"} locale="de" >
+                    <div className="text-xl py-2 w-full hover:bg-gray-400 cursor-pointer text-center rounded-lg">French</div></Link>
                 </div>}
             </div>
         </div>
