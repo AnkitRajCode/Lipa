@@ -15,6 +15,8 @@ module.exports = {
       fontFamily: {
         'yaro': ['Yaro Cut', 'curier new'],
         'kanyon': ['kanyon', 'san serif'],
+        montserrat:['Montserrat', 'sans-serif'],
+        poppins:['Poppins', 'sans-serif'],
       }
     },
   },
