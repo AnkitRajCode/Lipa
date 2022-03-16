@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import Navbar from '../components/Navbar';
 import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
@@ -24,27 +23,9 @@ export const getStaticProps = async (context) => {
     };
 };
 
-const faq = ({ data }) => {
-    const [faqs, setfaqs] = useState([
-        {
-          question: 'How can i get a Refund',
-          answer: 'Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.',
-          open: false
-        },
-        {
-          question: 'Can i use this Design Set on Client sites?',
-          answer: 'Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.lorem ipsum dolor sit amet, consectetur adipiscing elit, ',
-          open: false
-        },
-        {
-          question: 'How long is the license valid?',
-          answer: 'lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. ',
-          open: false
-        }
-    ]);
-  
+const faq = ({ data }) => {  
     const toggleFAQ = index => {
-        setfaqs(faqs.map((faq, i) => {
+        setfaqs(faq1s.map((faq, i) => {
           if (i === index) {
             faq.open = !faq.open
           } else {

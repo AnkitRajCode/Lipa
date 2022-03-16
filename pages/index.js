@@ -4,6 +4,7 @@ import Contact from "../components/Contact";
 // Import Swiper React components
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Pagination } from "swiper";
+import Link from "next/link";
 
 // Import Swiper styles
 import "swiper/css";
