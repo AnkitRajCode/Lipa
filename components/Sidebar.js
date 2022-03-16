@@ -4,16 +4,16 @@ const Sidebar = () => {
     <>
         <div className="absolute top-0 left-0 h-screen bg-white text-black p-10 font-poppins text-lg font-medium flex flex-col justify-between shadow-xl">
             <div className="flex flex-col space-y-3">
-                <Link href="/">
+                <Link href="/wallet">
                     <a>lipa Wallet</a>
                 </Link>
-                <Link href="/" >
+                <Link href="/business" >
                     <a>lipa wallet for bussiness</a>
                 </Link>
-                <Link href="/" >
+                <Link href="/about" >
                     <a>About Us</a>
                 </Link>
-                <Link href="/" >
+                <Link href="/faq" >
                     <a>FAQ</a>
                 </Link>
                 <div className="flex justify-center pt-4">

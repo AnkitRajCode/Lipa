@@ -69,7 +69,7 @@ export default function Home({ data }) {
                   <SwiperSlide key={index + 1}>
                     <div className="p-8">
                       <div className="">
-                        <img src={item.image.url} alt={item.image.name} width="120px" height="120px" />
+                        <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
                       </div>
                       <div className="mt-10 text-3xl font-semibold text-blue-500">{item.description}</div>
                     </div>
@@ -92,7 +92,7 @@ export default function Home({ data }) {
             {data.section2.map((item, index) => {
               return (
                 <SwiperSlide key={index + 1} className="flex justify-center items-center">
-                  <img src={item.image.url} alt={item.image.name} width="120px" height="120px" />
+                  <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
                   <div className="max-w-xl ml-14 text-4xl font-medium font-montserrat">{item.description} </div>
                 </SwiperSlide>
               );
@@ -106,69 +106,81 @@ export default function Home({ data }) {
             {data.section3_cards.map((item, index) => {
               return (
                 <div className="w-72 h-72 bg-white p-10 flex flex-col justify-center items-center shadow-xl rounded-2xl">
-                  <img src={item.image.url} alt={item.image.name} width="120px" height="120px" />
+                  <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
                   <div className="mt-10 text-xl font-medium ">{item.description} </div>
                 </div>
               );
             })}
           </div>
         </div>
-        {/* welcome to lipa */}
-        <div className="h-screen flex flex-col justify-center items-center">
-          <div>welcome to lipa</div>
-          <div>
-            lipa reimageines <br /> cashless payments
-          </div>
-        </div>
-        {/* choose your Wallet */}
-        <div className="">
-          <div className="text-center">choose your Wallet</div>
 
-          <div className="flex flex-col md:flex-row justify-around">
+        {/* welcome to lipa */}
+        <div 
+          className="h-screen flex flex-col px-60 w-full justify-center bg-center bg-cover font-montserrat text-white"
+          style={{ backgroundImage: `url(/Backgrounds/LandingMiddle.jpg)`}}
+        >
+          <div className="text-3xl font-semibold">welcome to lipa</div>
+          <div className="text-6xl font-medium mt-20">lipa reimageines <br /> cashless payments</div>
+        </div>
+
+        {/* choose your Wallet */}
+        <div className="px-40 py-20">
+          <div className="text-center text-4xl font-semibold mb-20">Choose your Wallet</div>
+          <div className="flex flex-col  md:flex-row justify-around">
             {data.section5_cards.map((item, index) => {
               return (
                 <>
-                  <div className="w-80 h-80 bg-gray-200 shadow-xl rounded-2xl" key={index+1}>
-                    <div className="text-center">{item.heading}</div>
-                    <span>
-                      {item.description}
-                    </span>
-                    <a href={item.button_link}>{item.button_tex}</a>
+                  <div className="flex flex-col justify-between w-96 h-96 bg-gray-200 shadow-xl rounded-2xl p-10 font-semibold" key={index+1}>
+                    <div className="text-3xl">{item.heading}</div>
+                    <div className="text-xl my-5 font-normal">{item.description}</div>
+                    <div className="flex justify-center ">
+                      <a href={item.button_link} className="px-8 rounded-full py-2 text-white bg-cyan-500">{item.button_text}</a>
+                    </div>
                   </div>
                 </>
               );
             })}
-
-          
-          </div>
-
-          {/* wallet for bussiness */}
-          <div className="flex">
-            <div className="w-1/2">
-              <div className="">lipa wallet for everyone</div>
-              <div className="">
-                Lorem ipsum dolor, sit amet consectetur adipisicing elit.
-                Necessitatibus esse est nemo perferendis! Ratione, deleniti?
-                Quibusdam corrupti pariatur perferendis neque.
-              </div>
-              <ol>
-                <li>bitcoin</li>
-                <li>bitcoin</li>
-                <li>bitcoin</li>
-                <li>bitcoin</li>
-              </ol>
-              <div className="">image google pay ka</div>
-            </div>
-            <div className="w-1/2">
-              <Image
-                src="/Backgrounds/mobile.png"
-                alt="mobile"
-                width={"300px"}
-                height={"600px"}
-              />
-            </div>
           </div>
         </div>
+
+        {/* wallet for bussiness */}
+        <div className="flex px-40 py-20">
+          <div className="w-1/2">
+            <div className="text-6xl font-semibold mb-10 text-cyan-600">Lipa Wallet for Business</div>
+            <div className="text-3xl text-gray-400 max-w-lg">
+              Lipa is your way ro use your bitcoin. Topping up bitcoin and paying with it is easier than before. So download the app and start using bitcoin.
+            </div>
+            <div className="flex flex-col space-y-2 mt-5 text-2xl">
+              <div className="">
+                <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> Bitcoin to bitcoin</div>
+                <div className="text-gray-400 ml-8">payments</div>
+              </div>
+              <div className="">
+                <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> 0.98% transparent fee</div>
+                <div className="text-gray-400 ml-8">for each transaction</div>
+              </div>
+              <div className="">
+                <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> Employee management</div>
+                <div className="text-gray-400 ml-8">and app</div>
+              </div>
+              <div className="">
+                <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> BTC book keeping</div>
+                <div className="text-gray-400 ml-8">support and eduction</div>
+              </div>
+            </div>
+
+          </div>
+          <div className="w-1/2 flex flex-col items-center justify-center ">
+            <Image
+              src="/Backgrounds/LandingMobile.png"
+              alt="mobile"
+              width={"400px"}
+              height={"600px"}
+            />
+            <div className="max-w-xs text-xl mt-10 text-center font-medium text-gray-600">Click <a href="/" className="font-semibold">here</a> and send us a request to create your lipa Wallet for Business instead</div>
+          </div>
+        </div>
+
         <Contact />
         <Footer />
       </div>
