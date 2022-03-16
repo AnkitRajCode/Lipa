@@ -105,7 +105,7 @@ export default function Home({ data }) {
           <div className="flex flex-col md:flex-row justify-between">
             {data.section3_cards.map((item, index) => {
               return (
-                <div className="w-72 h-72 bg-white p-10 flex flex-col justify-center items-center shadow-xl rounded-2xl">
+                <div key={index} className="w-72 h-72 bg-white p-10 flex flex-col justify-center items-center shadow-xl rounded-2xl">
                   <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
                   <div className="mt-10 text-xl font-medium ">{item.description} </div>
                 </div>
@@ -177,7 +177,7 @@ export default function Home({ data }) {
               width={"400px"}
               height={"600px"}
             />
-            <div className="max-w-xs text-xl mt-10 text-center font-medium text-gray-600">Click <a href="/" className="font-semibold">here</a> and send us a request to create your lipa Wallet for Business instead</div>
+            <div className="max-w-xs text-xl mt-10 text-center font-medium text-gray-600">Click <Link href="/"><a className="font-semibold">here</a></Link> and send us a request to create your lipa Wallet for Business instead</div>
           </div>
         </div>
 
