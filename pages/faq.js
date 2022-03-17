@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
-import FAQ from '../components/FAQ';
 import Footer from '../components/Footer';
+import { useState } from 'react';
 
 export const getStaticProps = async (context) => {
     const {locales} =  context;
@@ -24,8 +24,10 @@ export const getStaticProps = async (context) => {
 };
 
 const faq = ({ data }) => {  
+    // useState
+    const [faq1, setFaq1] = useState(data.faq1.open);
     const toggleFAQ = index => {
-        setfaqs(faq1s.map((faq, i) => {
+        setFaq1(data.faq1.map((faq, i) => {
           if (i === index) {
             faq.open = !faq.open
           } else {
@@ -34,8 +36,32 @@ const faq = ({ data }) => {
     
           return faq;
         }))
-        
       }
+    const [faq2, setFaq2] = useState(data.faq2.open);
+    const toggle2FAQ = index => {
+        setFaq1(data.faq2.map((faq, i) => {
+          if (i === index) {
+            faq.open = !faq.open
+          } else {
+            faq.open = false;
+          }
+    
+          return faq;
+        }))
+      }
+    const [faq3, setFaq3] = useState(data.faq3.open);
+    const toggle3FAQ = index => {
+        setFaq1(data.faq3.map((faq, i) => {
+          if (i === index) {
+            faq.open = !faq.open
+          } else {
+            faq.open = false;
+          }
+    
+          return faq;
+        }))
+      }
+
   return (
     <>
         <Navbar />
@@ -87,21 +113,51 @@ const faq = ({ data }) => {
             <div className="text-center text-4xl font-semibold text-teal-300 py-10 border-b-2 border-gray-200">{data.faq1Heading}</div>
             <div className="faqs">
                 {data.faq1.map((faq, i) => (
-                    <FAQ faq={faq} index={i} key={i} toggleFAQ={toggleFAQ} />
+                    <div
+                    className={"border-b border-gray-200 pb-2 px-2 faq " + (faq.open ? 'open' : '')}
+                    onClick={() => toggleFAQ(i)}
+                >
+                    <div className="faq-question text-xl font-semibold flex justify-between mt-5">
+                        {faq.question}
+                    </div>
+                    <div className="faq-answer text-lg text-justify">
+                        {faq.answer}
+                    </div>
+                </div>
                 ))}
             </div>
 
             <div className="text-center text-4xl font-semibold text-teal-300 pt-20 pb-10 border-b-2 border-gray-200">{data.faq2Heading}</div>
             <div className="faqs">
                 {data.faq2.map((faq, i) => (
-                    <FAQ faq={faq} index={i} key={i} toggleFAQ={toggleFAQ} />
+                    <div
+                    className={"border-b border-gray-200 pb-2 px-2 faq " + (faq.open ? 'open' : '')}
+                    onClick={() => toggle2FAQ(i)}
+                >
+                    <div className="faq-question text-xl font-semibold flex justify-between mt-5">
+                        {faq.question}
+                    </div>
+                    <div className="faq-answer text-lg text-justify">
+                        {faq.answer}
+                    </div>
+                </div>
                 ))}
             </div>
 
             <div className="text-center text-4xl font-semibold text-teal-300 pt-20 pb-10 border-b-2 border-gray-200">{data.faq3Heading}</div>
             <div className="faqs">
                 {data.faq3.map((faq, i) => (
-                    <FAQ faq={faq} index={i} key={i} toggleFAQ={toggleFAQ} />
+                    <div
+                    className={"border-b border-gray-200 pb-2 px-2 faq " + (faq.open ? 'open' : '')}
+                    onClick={() => toggle3FAQ(i)}
+                >
+                    <div className="faq-question text-xl font-semibold flex justify-between mt-5">
+                        {faq.question}
+                    </div>
+                    <div className="faq-answer text-lg text-justify">
+                        {faq.answer}
+                    </div>
+                </div>
                 ))}
             </div>
         </div>

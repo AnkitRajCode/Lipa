@@ -17,6 +17,8 @@ module.exports = {
         'kanyon': ['kanyon', 'san serif'],
         montserrat:['Montserrat', 'sans-serif'],
         poppins:['Poppins', 'sans-serif'],
+        roboto:['Roboto', 'sans-serif'],
+        sans:['Open Sans', 'sans-serif'],
       }
     },
   },
