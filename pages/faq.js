@@ -25,21 +25,19 @@ export const getStaticProps = async (context) => {
 
 const faq = ({ data }) => {  
     // useState
-    const [faq1, setFaq1] = useState(data.faq1.open);
+    const [active, setActive] = useState('open');
     const toggleFAQ = index => {
-        setFaq1(data.faq1.map((faq, i) => {
+        setActive(data.faq1.map((faq, i) => {
           if (i === index) {
             faq.open = !faq.open
           } else {
             faq.open = false;
           }
-    
           return faq;
         }))
       }
-    const [faq2, setFaq2] = useState(data.faq2.open);
     const toggle2FAQ = index => {
-        setFaq1(data.faq2.map((faq, i) => {
+        setActive(data.faq2.map((faq, i) => {
           if (i === index) {
             faq.open = !faq.open
           } else {
@@ -49,9 +47,8 @@ const faq = ({ data }) => {
           return faq;
         }))
       }
-    const [faq3, setFaq3] = useState(data.faq3.open);
     const toggle3FAQ = index => {
-        setFaq1(data.faq3.map((faq, i) => {
+        setActive(data.faq3.map((faq, i) => {
           if (i === index) {
             faq.open = !faq.open
           } else {
@@ -114,6 +111,7 @@ const faq = ({ data }) => {
             <div className="faqs">
                 {data.faq1.map((faq, i) => (
                     <div
+                    key={i}
                     className={"border-b border-gray-200 pb-2 px-2 faq " + (faq.open ? 'open' : '')}
                     onClick={() => toggleFAQ(i)}
                 >
@@ -131,6 +129,7 @@ const faq = ({ data }) => {
             <div className="faqs">
                 {data.faq2.map((faq, i) => (
                     <div
+                    key={i}
                     className={"border-b border-gray-200 pb-2 px-2 faq " + (faq.open ? 'open' : '')}
                     onClick={() => toggle2FAQ(i)}
                 >
@@ -148,6 +147,7 @@ const faq = ({ data }) => {
             <div className="faqs">
                 {data.faq3.map((faq, i) => (
                     <div
+                    key={i}
                     className={"border-b border-gray-200 pb-2 px-2 faq " + (faq.open ? 'open' : '')}
                     onClick={() => toggle3FAQ(i)}
                 >
