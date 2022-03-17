@@ -23,9 +23,9 @@ export const getStaticProps = async (context) => {
     };
 };
 
-const faq = ({ data }) => {  
-    // useState
+const Faq = ({ data }) => {  
     const [active, setActive] = useState('open');
+    
     const toggleFAQ = index => {
         setActive(data.faq1.map((faq, i) => {
           if (i === index) {
@@ -185,4 +185,4 @@ const faq = ({ data }) => {
   )
 }
 
-export default faq
+export default Faq
