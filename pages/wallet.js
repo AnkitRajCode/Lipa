@@ -1,7 +1,7 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
+import WalletEveryone from '../components/WalletEveryone';
 import Image from 'next/image';
-import Link from "next/link";
 import Head from 'next/head';
 
 // Import Swiper React components
@@ -11,7 +11,6 @@ import { Mousewheel, Pagination } from "swiper";
 // Import Swiper styles
 import "swiper/css";
 import "swiper/css/pagination";
-import WalletEveryone from '../components/WalletEveryone';
 
 export const getStaticProps = async (context) => {
     const {locales} =  context;
