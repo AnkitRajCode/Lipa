@@ -1,6 +1,6 @@
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-import { useState } from 'react';
+import Head from 'next/head';
 
 export const getStaticProps = async (context) => {
     const {locales} =  context;
