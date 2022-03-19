@@ -44,8 +44,8 @@ const wallet = ({data}) => {
           className="h-screen w-full flex flex-col justify-center bg-center bg-cover px-60 text-white"
           style={{ backgroundImage: `url(/Backgrounds/LandingMiddle.jpg)` }}
         >
-            {/* Header Text */}
-            <div className="text-7xl ">{data.banner_text}</div>
+          {/* Header Text */}
+          <div className="text-7xl ">{data.banner_text}</div>
         </div>
 
         {/* section1 */}
@@ -60,7 +60,7 @@ const wallet = ({data}) => {
                       <Image src={item.image.url} alt={item.image.name} width="300px" height="500px" />
                     </div>
                     <div className="text-center text-2xl text-bold text-gray-600 my-5">{item.id}</div>
-                    <div className="text-center text-2xl text-semibold">{item.description}</div>
+                    <div className="text-center text-xl text-semibold">{item.description}</div>
                   </div>
                 );
               })}

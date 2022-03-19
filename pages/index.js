@@ -44,16 +44,16 @@ export default function Home({ data }) {
       <Head>
         <title>LIPA</title>
       </Head>
-      <div className="">
+      <div className=" overflow-hidden">
         <Navbar />
         {/* Header */}
         <div
-          className="h-screen w-full bg-center bg-cover flex"
+          className="h-screen w-full bg-center bg-cover flex md:flex-row flex-col"
           style={{ backgroundImage: `url(/Backgrounds/Landing.jpg)` }}
         >
           {/* Header Text */}
-          <div className="md:w-1/2 font-kanyon font-semibold flex justify-end pr-20 items-center h-full text-6xl text-white leading-12">
-            <div className="w-96">
+          <div className="md:w-1/2 font-kanyon font-semibold flex justify-end md:pr-20 items-center h-full text-6xl text-white leading-12">
+            <div className="md:w-96">
               {data.banner_text}
             </div>
           </div>
@@ -64,7 +64,7 @@ export default function Home({ data }) {
               pagination={{
                 clickable: true,
               }}
-              className="w-[26rem] h-96 rounded-3xl bg-white "
+              className="w-80 md:w-[26rem] h-96 rounded-3xl bg-white "
               mousewheel={true}
               modules={[Mousewheel, Pagination]}
             >
@@ -84,7 +84,7 @@ export default function Home({ data }) {
           </div>
         </div>
         {/* Section 1 - vertical scroll */}
-        <div className="px-40">
+        <div className="md:px-40 px-10">
           <Swiper
             direction={"vertical"}
             pagination={{
@@ -104,7 +104,7 @@ export default function Home({ data }) {
           </Swiper>
         </div>
         {/* Businesses need */}
-        <div className="py-20 px-60 bg-gray-100">
+        <div className="py-20 md:px-60 px-10 bg-gray-100">
           <div className="text-center mb-20 text-4xl font-semibold font-montserrat">Businesses need...</div>
           <div className="flex flex-col md:flex-row justify-between">
             {data.section3_cards.map((item, index) => {
@@ -120,7 +120,7 @@ export default function Home({ data }) {
 
         {/* welcome to lipa */}
         <div 
-          className="h-screen flex flex-col px-60 w-full justify-center bg-center bg-cover font-montserrat text-white"
+          className="h-screen flex flex-col md:px-60 px-10 w-full justify-center bg-center bg-cover font-montserrat text-white"
           style={{ backgroundImage: `url(/Backgrounds/LandingMiddle.jpg)`}}
         >
           <div className="text-3xl font-semibold">welcome to lipa</div>
@@ -128,13 +128,13 @@ export default function Home({ data }) {
         </div>
 
         {/* choose your Wallet */}
-        <div className="px-40 py-20">
+        <div className="md:px-40 px-10 py-20">
           <div className="text-center text-4xl font-semibold mb-20">Choose your Wallet</div>
           <div className="flex flex-col  md:flex-row justify-around">
             {data.section5_cards.map((item, index) => {
               return (
                 <>
-                  <div className="flex flex-col justify-between w-96 h-96 bg-gray-200 shadow-xl rounded-2xl p-10 font-semibold" key={index+1}>
+                  <div className="flex flex-col justify-between w-80 md:w-96 h-96 bg-gray-200 shadow-xl rounded-2xl p-10 font-semibold" key={index+1}>
                     <div className="text-3xl">{item.heading}</div>
                     <div className="text-xl my-5 font-normal">{item.description}</div>
                     <div className="flex justify-center ">

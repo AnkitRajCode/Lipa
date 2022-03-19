@@ -3,7 +3,7 @@ import Link from "next/link";
 
 const WalletEveryone = () => {
   return (
-    <div className="flex px-40 py-20">
+    <div className="flex md:px-40 px-10 py-20">
           <div className="w-1/2">
             <div className="text-6xl font-semibold mb-10 text-cyan-600">Lipa Wallet for Business</div>
             <div className="text-3xl text-gray-400 max-w-lg">
