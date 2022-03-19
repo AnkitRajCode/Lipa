@@ -65,7 +65,7 @@ const Faq = ({ data }) => {
         <Head>
             <title>LIPA - FAQs</title>
         </Head>
-        <Navbar />
+        <Navbar  route="about"/>
         {/* Header */}
         <div
           className="h-screen w-full flex flex-col justify-center bg-center bg-cover px-60 text-white"

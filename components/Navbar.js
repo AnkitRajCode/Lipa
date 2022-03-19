@@ -2,7 +2,7 @@ import Link from "next/link";
 import React, { useState } from "react";
 import Sidebar from "./Sidebar";
 
-const Navbar = () => {
+const Navbar = ({ route }) => {
     const [dropdown, setDropdown] = useState(false);
    
     const [isOpen, setIsOpen] = useState(false);
@@ -30,10 +30,10 @@ const Navbar = () => {
                 </div>
                 {/* dropdown */}
                 {dropdown && <div className="absolute shadow-xl right-48 top-24 bg-white w-40 text-black rounded-lg font-poppins">
-                    <Link href="/" locale="en-US" >
+                <Link href={route?`/${route}`:"/"} locale="en-US" >
                         <div className="text-xl py-2 w-full hover:text-white hover:bg-gray-400 cursor-pointer text-center rounded-t-lg">English</div>
                     </Link>
-                    <Link href="/" locale="de" >
+                    <Link href={route?`/${route}`:"/"} locale="de" >
                         <div className="text-xl py-2 w-full hover:text-white hover:bg-gray-400 cursor-pointer text-center rounded-b-lg">German</div>
                     </Link>
                 </div>}

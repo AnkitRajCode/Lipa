@@ -39,7 +39,7 @@ const about = ({data}) => {
         <title>LIPA - About</title>
       </Head>
       <div>
-        <Navbar />
+        <Navbar route="about" />
         {/* Header */}
         <div
           className="h-screen w-full flex flex-col justify-center font-sans bg-center bg-cover px-60 text-white"
