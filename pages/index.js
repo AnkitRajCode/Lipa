@@ -47,21 +47,21 @@ export default function Home({ data }) {
         <Navbar />
         {/* Header */}
         <div
-          className="h-screen w-full bg-center bg-cover flex md:flex-row flex-col"
+          className="h-screen w-full bg-center bg-cover flex lg:flex-row flex-col"
           style={{ backgroundImage: `url(/Backgrounds/Landing.jpg)` }}
         >
           {/* Header Text */}
-          <div className="md:w-1/2 pt-80 md:pt-0 font-kanyon font-semibold flex justify-center  md:justify-end md:pr-20 items-center h-full text-6xl text-white md:leading-12">
+          <div className="lg:w-1/2 pt-80 lg:pt-0 font-kanyon font-semibold flex justify-center lg:justify-end md:pr-20 items-center h-full text-6xl text-white md:leading-12">
             <span className="max-w-xs md:max-w-sm ">{data.banner_text}</span>
           </div>
           {/* Header Slider */}
-          <div className="md:w-1/2 flex justify-end items-center h-full pt-20 md:pt-0">
+          <div className="lg:w-1/2 flex justify-end items-center h-full pt-20 lg:pt-0">
             <Swiper
               slidesPerView={1}
               pagination={{
                 clickable: true,
               }}
-              className="w-80 md:w-[26rem] md:h-96 rounded-3xl bg-white shadow-2xl"
+              className="w-80 md:w-[26rem] lg:h-96 rounded-3xl bg-white shadow-2xl"
               mousewheel={true}
               modules={[Mousewheel, Pagination]}
             >
@@ -72,7 +72,7 @@ export default function Home({ data }) {
                       <div>
                         <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
                       </div>
-                      <div className="mt-5 md:mt-10 text-2xl  md:text-3xl font-semibold text-blue-500">{item.description}</div>
+                      <div className="mt-5 lg:mt-10 text-2xl  md:text-3xl font-semibold text-blue-500">{item.description}</div>
                     </div>
                   </SwiperSlide>
                 );
@@ -81,7 +81,7 @@ export default function Home({ data }) {
           </div>
         </div>
         {/* Section 1 - vertical scroll */}
-        <div className="md:px-40 px-10 mt-60 md:mt-0">
+        <div className="md:px-40 px-10 mt-60 lg:mt-0">
           <Swiper
             direction={"vertical"}
             pagination={{
@@ -93,21 +93,21 @@ export default function Home({ data }) {
           >
             {data.section2.map((item, index) => {
               return (
-                <SwiperSlide key={index + 1} className="flex justify-center items-center">
+                <SwiperSlide key={index + 1} className="flex flex-col lg:flex-row justify-center items-center">
                   <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
-                  <div className="max-w-xl ml-5 md:ml-14 text-2xl md:text-4xl font-medium font-montserrat">{item.description} </div>
+                  <div className="max-w-xl mt-10 lg:mt-0 ml-5 md:ml-14 text-2xl md:text-4xl font-medium font-montserrat">{item.description} </div>
                 </SwiperSlide>
               );
             })}
           </Swiper>
         </div>
         {/* Businesses need */}
-        <div className="py-20 md:px-60 px-10 bg-gray-100">
+        <div className="py-20 lg:px-20 xl:px-60 px-5 bg-gray-100">
           <div className="text-center mb-20 text-4xl font-semibold font-montserrat">Businesses need...</div>
-          <div className="flex flex-col md:flex-row justify-between">
+          <div className="flex flex-col lg:flex-row justify-between items-center">
             {data.section3_cards.map((item, index) => {
               return (
-                <div key={index} className="w-72 h-72 bg-white mt-10 md:mt-0 p-10 flex flex-col justify-center items-center shadow-xl rounded-2xl">
+                <div key={index} className="w-72 h-72 bg-white mt-10 lg:mt-0 p-10 flex flex-col justify-center items-center shadow-xl rounded-2xl">
                   <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
                   <div className="mt-10 text-xl font-semibold md:font-medium text-center">{item.description} </div>
                 </div>
@@ -126,7 +126,7 @@ export default function Home({ data }) {
         </div>
 
         {/* choose your Wallet */}
-        <div className="hidden md:block md:px-40 px-10 py-20">
+        <div className="hidden lg:block md:px-40 px-10 py-20">
           <div className="text-center text-4xl font-semibold mb-20">Choose your Wallet</div>
           <div className="flex flex-col  md:flex-row justify-around">
             {data.section5_cards.map((item, index) => {
