@@ -61,28 +61,28 @@ const Faq = ({ data }) => {
       }
 
   return (
-    <>
+    <div className='overflow-hidden'>
         <Head>
             <title>LIPA - FAQs</title>
         </Head>
         <Navbar  route="faq"/>
         {/* Header */}
         <div
-          className="h-screen w-full flex flex-col justify-center bg-center bg-cover px-60 text-white"
+          className="h-screen w-full flex flex-col justify-center bg-center bg-cover px-5 md:px-60 text-white"
           style={{ backgroundImage: `url(/Faq/header.jpg)` }}
         >
             {/* Header Text */}
             <div className="text-4xl ">{data.banner_text1}</div>
-            <div className="text-7xl mt-10">{data.banner_text2}</div>
+            <div className="text-6xl md:text-7xl mt-10">{data.banner_text2}</div>
 
             {/* Header search */}
             <div className="mt-20">
-                <input type="search" placeholder='Search' name="" id="" className='w-[28rem] border-2 py-1 px-5 focus:outline-none border-white bg-transparent rounded-full' />
+                <input type="search" placeholder='Search' name="" id="" className='w-full md:w-[28rem] border-2 py-1 px-5 focus:outline-none border-white bg-transparent rounded-full' />
             </div>
         </div>
 
         {/* filter */}
-        <div className="px-60 py-14 bg-gray-100">
+        <div className="px-5 md:px-60 py-14 bg-gray-100">
             <div className="flex mb-10">
                 <div className="text-2xl mr-10">Filter</div>
                 <div className="w-96 border-2 rounded-full px-5 border-gray-200 ">
@@ -93,7 +93,7 @@ const Faq = ({ data }) => {
                     </select>
                 </div>
             </div>
-            <div className="flex space-x-10">
+            <div className="flex flex-col md:flex-row items-center space-y-5 md:space-x-10">
                 <div className="w-60 py-1 bg-white rounded-full shadow-3xl font-semibold">
                     <span className='px-20'>Filter 1</span>
                     <i className="fa-solid fa-xmark"></i>
@@ -110,7 +110,7 @@ const Faq = ({ data }) => {
         </div>
 
         {/* FAQ */}
-        <div className="px-60 py-14">
+        <div className="px-5 md:px-60 py-14">
             <div className="text-center text-4xl font-semibold text-teal-300 py-10 border-b-2 border-gray-200">{data.faq1Heading}</div>
             <div className="faqs">
                 {data.faq1.map((faq, i) => (
@@ -169,15 +169,17 @@ const Faq = ({ data }) => {
 
         {/* Right Answer */}
         <div className="flex justify-center my-20">
-            <div className='max-w-4xl font-poppins bg-gray-100 rounded-3xl p-14'>
+            <div className='max-w-4xl font-poppins bg-gray-100 md:rounded-3xl p-5 md:p-14'>
                 <div className="text-4xl text-center font-medium">You didnt find the right answer?</div>
                 <div className="text-center my-5">
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. maiores dolorum ratione ipsa obcaecati? Odio natus dolorum repudiandae eligendi voluptate.
                 </div>
-                <input type="text" name="" id="" className='w-full border-b border-b-gray-500 focus:outline-none bg-transparent ' placeholder='Question' />
-                <form className='mt-5'>
-                    <input type="email" placeholder='E-mail address' name="" id="" className='border-b border-b-gray-500 focus:outline-none bg-transparent w-4/5' />
-                    <input type="button" value="Submit" className='px-8 py-1 shadow-lg text-white  rounded-full bg-sky-600 cursor-pointer' />
+                <form action="" >
+                    <input type="text" name="" id="" className='w-full border-b border-b-gray-500 focus:outline-none bg-transparent ' placeholder='Question' />
+                    <div className='flex flex-col md:flex-row items-center mt-5'>
+                        <input type="email" placeholder='E-mail address' name="" id="" className='border-b border-b-gray-500 focus:outline-none bg-transparent w-full md:w-4/5' />
+                        <input type="button" value="Submit" className='px-8 py-1 shadow-lg text-white  rounded-full bg-sky-600 cursor-pointer my-5 md:my-0' />
+                    </div>
                 </form>
                 <div className='text-sm text-center mt-2'>By submitting this form I agree to lipa privacy policy</div>
             </div>
@@ -185,7 +187,7 @@ const Faq = ({ data }) => {
 
         {/* footer */}
         <Footer/>
-    </>
+    </div>
   )
 }
 
