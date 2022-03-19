@@ -142,7 +142,7 @@ const wallet = ({data}) => {
         </div>
 
         {/* Counter */}
-        <div className="px-5 md:px-60 py-10 md:py-20 mb-72 bg-teal-300 text-white flex flex-col md:flex-row justify-between items-center md:items-start font-sans font-semibold">
+        <div className="px-5 md:px-60 py-10 md:py-20 mb-72 md:mb-0  bg-teal-300 text-white flex flex-col md:flex-row justify-between items-center md:items-start font-sans font-semibold">
           {data.numbers.map((item, index) => {
             return (
               <div key={index} className="text-center w-52 mt-10 md:mt-0">

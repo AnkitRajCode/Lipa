@@ -18,13 +18,13 @@ const Footer = () => {
                 <div className="">Follow us on</div>
                 <div className="mt-5 text-2xl">
                     <Link href="https://www.facebook.com/">
-                        <a className="py-0.5 px-2.5 text-white border-2 border-white rounded-full"><i className="fa-brands fa-facebook-f"></i></a>
+                        <a className="py-0.5 px-2.5 text-white border-2 border-white hover:bg-white hover:text-sky-600 rounded-full"><i className="fa-brands fa-facebook-f"></i></a>
                     </Link>
-                    <Link href="https://www.facebook.com/">
-                        <a className="py-1 px-2.5 text-white border-2 border-white rounded-full mx-3"><i className="fa-brands fa-linkedin-in"></i></a>
+                    <Link href="https://www.linkedin.com/">
+                        <a className="py-1 px-2.5 text-white border-2 border-white hover:bg-white hover:text-sky-600 rounded-full mx-3"><i className="fa-brands fa-linkedin-in"></i></a>
                     </Link>
-                    <Link href="https://www.facebook.com/">
-                        <a className="py-1 px-2 text-white border-2 border-white rounded-full"><i className="fa-brands fa-instagram"></i></a>
+                    <Link href="https://www.instagram.com/">
+                        <a className="py-1 px-2 text-white border-2 border-white hover:bg-white hover:text-sky-600 rounded-full"><i className="fa-brands fa-instagram"></i></a>
                     </Link>
                 </div>
             </div>
