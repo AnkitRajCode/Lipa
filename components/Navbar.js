@@ -7,14 +7,21 @@ const Navbar = ({ route }) => {
    
     const [isOpen, setIsOpen] = useState(false);
     return (
-        <div className='w-full absolute top-0 left-0 z-40 font-yaro tracking-wider text-white text-3xl font-semibold p-5 md:p-10 md:px-32 flex items-center justify-between '>
+        <>
+        <div className='w-full absolute top-0 left-0 font-yaro tracking-wider text-white text-3xl font-semibold p-5 md:p-10 md:px-32 flex items-center justify-between ' style={{zIndex:"10"}}>
             <Link href={"/"} >
                 <a className="text-6xl">lipa</a>
             </Link>
             <div className="flex items-center">
-                <i className="fa-solid fa-language cursor-pointer"
-                    onClick={() => setDropdown(!dropdown)}
-                ></i>
+                {!isOpen ? (
+                    <i className="fa-solid fa-language cursor-pointer"
+                        onClick={() => setDropdown(!dropdown)}
+                    ></i>
+                ) : (
+                    <i className="fa-solid fa-language cursor-pointer text-black"
+                        onClick={() => setDropdown(!dropdown)}
+                    ></i>
+                )}
                 {/* Humburger menu */}
                 <div
                     onClick={() => setIsOpen(!isOpen)}
@@ -25,7 +32,7 @@ const Navbar = ({ route }) => {
                     {!isOpen ? (
                         <i className="fa-solid fa-bars"></i>
                     ) : (
-                        <i className="fa-solid fa-xmark"></i>
+                        <i className="fa-solid fa-xmark text-cyan-500"></i>
                     )}
                 </div>
                 {/* dropdown */}
@@ -37,10 +44,11 @@ const Navbar = ({ route }) => {
                         <div className="text-xl py-2 w-full hover:text-white hover:bg-gray-400 cursor-pointer text-center rounded-b-lg">German</div>
                     </Link>
                 </div>}
-                {/* sidebar */}
-                {isOpen && <Sidebar />}
             </div>
         </div>
+        {/* sidebar */}
+        {isOpen && <Sidebar />}
+        </>
     )
 }
 

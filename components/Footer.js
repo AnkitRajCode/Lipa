@@ -1,20 +1,20 @@
 import Link from 'next/link'
 const Footer = () => {
   return (
-    <div className='p-5 md:p-10 bg-sky-600 text-white'>
-        <div className="text-5xl font-yaro mb-10 ml-44">lipa</div>
+    <div className='p-10 bg-sky-600 text-white'>
+        <div className="text-5xl font-yaro mb-10 md:ml-44 text-center md:text-left">lipa</div>
         <div className="flex flex-col md:flex-row justify-evenly items-center text-xl font-medium">
-            <div className="">
+            <div className="text-center md:text-left">
                 <div className="">lipa</div>
                 <div className="">Lorem, ipsum. 12</div>
                 <div className="">Lorem hjn slx </div>
             </div>
-            <div className="border-l-2 border-white pl-32">
+            <div className="md:border-l-2 md:border-white md:pl-32 mt-10 md:mt-0 text-center md:text-left">
                 <div className="">Data protection</div>
                 <div className="">Imprint</div>
                 <div className="">@2021 lipa</div>
             </div>
-            <div className="border-l-2 border-white pl-32">
+            <div className="md:border-l-2 md:border-white md:pl-32 mt-10 md:mt-0 text-center md:text-left">
                 <div className="">Follow us on</div>
                 <div className="mt-5 text-2xl">
                     <Link href="https://www.facebook.com/">

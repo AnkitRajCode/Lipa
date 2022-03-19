@@ -3,9 +3,9 @@ import Link from "next/link";
 
 const WalletEveryone = () => {
   return (
-    <div className="flex md:px-40 px-10 py-20">
-          <div className="w-1/2">
-            <div className="text-6xl font-semibold mb-10 text-cyan-600">Lipa Wallet for Business</div>
+    <div className="flex flex-col-reverse md:flex-row md:px-40 px-5 py-20">
+          <div className="md:w-1/2">
+            <div className=" text-5xl md:text-6xl font-semibold mt-10 md:mt-0 mb-10 text-cyan-600">Lipa Wallet for Business</div>
             <div className="text-3xl text-gray-400 max-w-lg">
               Lipa is your way ro use your bitcoin. Topping up bitcoin and paying with it is easier than before. So download the app and start using bitcoin.
             </div>
@@ -29,14 +29,14 @@ const WalletEveryone = () => {
             </div>
 
           </div>
-          <div className="w-1/2 flex flex-col items-center justify-center ">
+          <div className="md:w-1/2 flex flex-col items-center justify-center -mt-80 md:mt-0">
             <Image
               src="/Backgrounds/LandingMobile.png"
               alt="mobile"
               width={"400px"}
               height={"600px"}
             />
-            <div className="max-w-xs text-xl mt-10 text-center font-medium text-gray-600">Click <Link href="/"><a className="font-semibold">here</a></Link> and send us a request to create your lipa Wallet for Business instead</div>
+            <div className="max-w-xs text-xl mt-10 text-center font-semibold md:font-medium text-gray-600">Click <Link href="/"><a className="font-semibold">here</a></Link> and send us a request to create your lipa Wallet for Business instead</div>
           </div>
         </div>
   )

@@ -2,8 +2,9 @@ import Link from 'next/link'
 const Sidebar = () => {
   return (
     <>
-        <div className="absolute top-0 left-0 h-screen bg-white text-black p-10 font-poppins text-lg font-medium flex flex-col justify-between shadow-xl">
-            <div className="flex flex-col space-y-3">
+        <div className="absolute top-0 w-80 right-0 h-screen bg-white text-black p-10 font-poppins text-lg font-medium flex flex-col justify-between shadow-xl" style={{zIndex:"5"}}>
+            <div className="h-20"></div>
+            <div className="flex flex-col space-y-3 mb-40">
                 <Link href="/wallet">
                     <a>lipa Wallet</a>
                 </Link>
