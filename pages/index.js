@@ -81,7 +81,7 @@ export default function Home({ data }) {
           </div>
         </div>
         {/* Section 1 - vertical scroll */}
-        <div className="md:px-40 px-10 mt-40 md:mt-0">
+        <div className="md:px-40 px-10 mt-60 md:mt-0">
           <Swiper
             direction={"vertical"}
             pagination={{
@@ -95,7 +95,7 @@ export default function Home({ data }) {
               return (
                 <SwiperSlide key={index + 1} className="flex justify-center items-center">
                   <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
-                  <div className="max-w-xl ml-14 text-2xl md:text-4xl font-medium font-montserrat">{item.description} </div>
+                  <div className="max-w-xl ml-5 md:ml-14 text-2xl md:text-4xl font-medium font-montserrat">{item.description} </div>
                 </SwiperSlide>
               );
             })}
@@ -117,11 +117,11 @@ export default function Home({ data }) {
         </div>
 
         {/* welcome to lipa */}
-        <div 
+        <div
           className="h-screen flex flex-col md:px-60 px-10 w-full justify-center bg-center bg-cover font-montserrat text-white"
           style={{ backgroundImage: `url(/Backgrounds/LandingMiddle.jpg)`}}
         >
-          <div className="text-3xl font-semibold">welcome to lipa</div>
+          <div className="text-4xl md:text-3xl font-semibold">Welcome to lipa</div>
           <div className="text-5xl md:text-6xl font-medium mt-20">lipa reimageines <br /> cashless payments</div>
         </div>
 

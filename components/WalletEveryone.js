@@ -6,10 +6,10 @@ const WalletEveryone = () => {
     <div className="flex flex-col-reverse md:flex-row md:px-40 px-5 py-20">
           <div className="md:w-1/2">
             <div className=" text-5xl md:text-6xl font-semibold mt-10 md:mt-0 mb-10 text-cyan-600">Lipa Wallet for Business</div>
-            <div className="text-3xl text-gray-400 max-w-lg">
+            <div className="text-2xl md:text-3xl text-gray-400 max-w-lg">
               Lipa is your way ro use your bitcoin. Topping up bitcoin and paying with it is easier than before. So download the app and start using bitcoin.
             </div>
-            <div className="flex flex-col space-y-2 mt-5 text-2xl">
+            <div className="flex flex-col space-y-2 mt-5 text-xl md:text-2xl">
               <div className="">
                 <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> Bitcoin to bitcoin</div>
                 <div className="text-gray-400 ml-8">payments</div>
