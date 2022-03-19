@@ -106,8 +106,8 @@ const wallet = ({data}) => {
               
               <SwiperSlide className="flex flex-col md:flex-row justify-center ">
                 <div className="flex flex-col md:shadow-2xl rounded-3xl md:flex-row p-5 md:max-w-2xl items-center">
-                  <div className="text-xl font-medium font-sans md:w-3/5 p-5">
-                    <div className='text-justify md:text-left'>What I like most, is easy and quick global transfer. Crypto currencies are global, meaning they have the same value in every country and no exchange rates.</div>
+                  <div className="text-xl font-medium font-sans md:w-3/5 p-5 text-center md:text-left">
+                    <div>What I like most, is easy and quick global transfer. Crypto currencies are global, meaning they have the same value in every country and no exchange rates.</div>
                     <div className='mt-5'>John Ruben, founder of nari.com</div>
                   </div>
                   <div className="md:w-2/5">
@@ -117,8 +117,8 @@ const wallet = ({data}) => {
               </SwiperSlide>
               <SwiperSlide className="flex flex-col md:flex-row justify-center ">
                 <div className="flex flex-col md:shadow-2xl rounded-3xl md:flex-row p-5 md:max-w-2xl items-center">
-                  <div className="text-xl font-medium font-sans md:w-3/5 p-5">
-                    <div className='text-justify md:text-left'>What I like most, is easy and quick global transfer. Crypto currencies are global, meaning they have the same value in every country and no exchange rates.</div>
+                  <div className="text-xl font-medium font-sans md:w-3/5 p-5 text-center md:text-left">
+                    <div>What I like most, is easy and quick global transfer. Crypto currencies are global, meaning they have the same value in every country and no exchange rates.</div>
                     <div className='mt-5'>John Ruben, founder of nari.com</div>
                   </div>
                   <div className="md:w-2/5">
@@ -128,8 +128,8 @@ const wallet = ({data}) => {
               </SwiperSlide>
               <SwiperSlide className="flex flex-col md:flex-row justify-center ">
                 <div className="flex flex-col md:shadow-2xl rounded-3xl md:flex-row p-5 md:max-w-2xl items-center">
-                  <div className="text-xl font-medium font-sans md:w-3/5 p-5">
-                    <div className='text-justify md:text-left'>What I like most, is easy and quick global transfer. Crypto currencies are global, meaning they have the same value in every country and no exchange rates.</div>
+                  <div className="text-xl font-medium font-sans md:w-3/5 p-5 text-center md:text-left">
+                    <div>What I like most, is easy and quick global transfer. Crypto currencies are global, meaning they have the same value in every country and no exchange rates.</div>
                     <div className='mt-5'>John Ruben, founder of nari.com</div>
                   </div>
                   <div className="md:w-2/5">

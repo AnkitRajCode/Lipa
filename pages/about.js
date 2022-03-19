@@ -34,7 +34,7 @@ export const getStaticProps = async (context) => {
 
 const about = ({data}) => {
   return (
-    <>
+    <div className='overflow-hidden'>
       <Head>
         <title>LIPA - About</title>
       </Head>
@@ -42,17 +42,17 @@ const about = ({data}) => {
         <Navbar route="about" />
         {/* Header */}
         <div
-          className="h-screen w-full flex flex-col justify-center font-sans bg-center bg-cover px-60 text-white"
+          className="h-screen w-full flex flex-col justify-center font-sans bg-center bg-cover px-5 md:px-60 text-white"
           style={{ backgroundImage: `url(/About/header.jpg)` }}
         >
           {/* Header Text */}
           <div className="text-5xl ">{data.banner_text1}</div>
-          <div className="text-7xl mt-10">{data.banner_text2}</div>
+          <div className="text-6xl md:text-7xl mt-10">{data.banner_text2}</div>
         </div>
       </div>
 
       {/* Section 1 - vertical scroll */}
-      <div className="px-40">
+      <div className="px-5 md:px-40">
         <Swiper
           direction={"vertical"}
           pagination={{
@@ -64,9 +64,9 @@ const about = ({data}) => {
         >
           {data.section2_slider.map((item, index) => {
             return (
-              <SwiperSlide key={index + 1} className="flex justify-center items-center">
+              <SwiperSlide key={index + 1} className="flex flex-col md:flex-row justify-center items-center">
                 <Image src={item.image.url} alt={item.image.name} width="120px" height="120px" />
-                <div className="max-w-xl ml-24 text-4xl font-medium font-montserrat">{item.description} </div>
+                <div className="text-center md:max-w-xl ml-0 md:ml-24 mt-10 text-3xl md:text-4xl font-medium font-montserrat">{item.description} </div>
               </SwiperSlide>
             );
           })}
@@ -74,12 +74,12 @@ const about = ({data}) => {
       </div>
 
       {/* co-founders */}
-      <div className="px-40 py-20 bg-gray-100">
+      <div className="px-5 md:px-40 py-20 bg-gray-100">
         <div className="text-5xl text-center font-semibold">Co Founders</div>
-        <div className="flex flex-row justify-between items-center mt-28">
+        <div className="flex flex-col md:flex-row justify-between items-center md:mt-28">
         {data.team.map((item, index) => {
             return (
-              <div key={index} className="w-80 h-96 rounded-3xl shadow-2xl p-10 text-center bg-white">
+              <div key={index} className="w-80 h-96 mt-40 md:mt-0 rounded-3xl shadow-2xl p-10 text-center bg-white">
                 <div className="-mt-28">
                   <Image src={item.photo.url} alt={item.photo.name} width={item.photo.width} height={item.photo.height} className='rounded-full' />
                 </div>
@@ -93,12 +93,12 @@ const about = ({data}) => {
       </div>
 
       {/* Advisors */}
-      <div className="px-40 py-20">
+      <div className="px-5 md:px-40 py-20 ">
         <div className="text-5xl text-center font-semibold">Advisors</div>
-        <div className="flex flex-row justify-evenly items-center mt-28">
+        <div className="flex flex-col md:flex-row justify-evenly items-center md:mt-28">
         {data.advisors.map((item, index) => {
             return (
-              <div key={index} className="w-80 h-96 rounded-3xl shadow-2xl p-10 text-center bg-white">
+              <div key={index} className="w-80 h-96 mt-40 md:mt-0  rounded-3xl shadow-2xl p-10 text-center bg-white">
                 <div className="-mt-28">
                   <Image src={item.photo.url} alt={item.photo.name} width={item.photo.width} height={item.photo.height} className='rounded-full' />
                 </div>
@@ -112,10 +112,10 @@ const about = ({data}) => {
       </div>
 
       {/* Partners */}
-      <div className="px-40 py-20">
-        <div className="p-10 bg-gray-100 rounded-3xl">
+      <div className="px-5 md:px-40 py-20">
+        <div className="p-5 md:p-10 bg-gray-100 rounded-3xl">
         <div className="text-5xl text-center font-poppins font-semibold mb-10">Partners</div>
-        <div className=" flex flex-row justify-between ">
+        <div className=" flex flex-col md:flex-row justify-between ">
           {data.partners.map((item, index) => {
               return (
                 <div key={index} className="p-10 text-center">
@@ -133,7 +133,7 @@ const about = ({data}) => {
 
       {/* footer */}
       <Footer />
-    </>
+    </div>
   )
 }
 
