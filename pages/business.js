@@ -39,7 +39,7 @@ const business = ({data}) => {
         <title>LIPA - Business</title>
       </Head>
       <div className="">
-        <Navbar route="about" />
+        <Navbar route="business" />
         {/* Header */}
         <div
           className="h-screen w-full flex flex-col justify-center bg-center bg-cover px-80 text-white"
