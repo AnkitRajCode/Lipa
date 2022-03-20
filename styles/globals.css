@@ -91,3 +91,12 @@ input[type="search"]::-webkit-search-results-decoration {
 .myswiper{
 	padding-bottom: 50px!important;
 }
+
+.swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets{
+	left: 5px !important;
+}
+.swiper-pagination-clickable .swiper-pagination-bullet {
+    cursor: pointer;
+    width: 10px !important;
+    height: 10px !important;
+}

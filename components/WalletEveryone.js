@@ -26,6 +26,14 @@ const WalletEveryone = () => {
                 <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> BTC book keeping</div>
                 <div className="text-gray-400 ml-8">support and eduction</div>
               </div>
+              <div className="p-5 cursor-pointer">
+              <Image
+                src="/Images/store.png"
+                alt="store"
+                width={"300px"}
+                height={"140px"}
+              />
+              </div>
             </div>
 
           </div>
