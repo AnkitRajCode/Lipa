@@ -26,14 +26,14 @@ class MyDocument extends Document {
           <meta property="og:url" content="https://lipa.vercel.app/" />
           <meta property="og:title" content="Lipa" />
           <meta property="og:description" content="You discover a unique travel destination, cultures, cuisine, new people, new movies & music, a wide array of books and literature, and of course, new career opportunities in languages" />
-          <meta property="og:image" content="https://imgur.com/4ibSQfC" />
+          <meta property="og:image" content="https://imgur.com/4ibSQfC.png" />
 
           {/* Twitter */}
           <meta property="twitter:card" content="summary_large_image" />
           <meta property="twitter:url" content="https://lipa.vercel.app/" />
           <meta property="twitter:title" content="Lipa" />
           <meta property="twitter:description" content="You discover a unique travel destination, cultures, cuisine, new people, new movies & music, a wide array of books and literature, and of course, new career opportunities in languages" />
-          <meta property="twitter:image" content="https://imgur.com/4ibSQfC" />
+          <meta property="twitter:image" content="https://imgur.com/4ibSQfC.png" />
         </Head>
         <body>
           <Main />
