@@ -180,6 +180,7 @@ export default function Home({ data, Businessdata, Everyonedata }) {
         <WalletBusiness databusiness={Everyonedata} className="hidden md:block" />
 
         <Contact />
+        
         <Footer />
       </div>
     </>
