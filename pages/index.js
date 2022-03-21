@@ -13,6 +13,7 @@ import { Mousewheel, Pagination } from "swiper";
 import "swiper/css";
 import "swiper/css/pagination";
 import WalletEveryone from "../components/WalletEveryone";
+import WalletBusiness from "../components/WalletBusiness";
 
 export const getStaticProps = async (context) => {
   const {locales} =  context;
@@ -40,15 +41,26 @@ export const getStaticProps = async (context) => {
       const localiData =  await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details?_locale=de`)
       Businesstranslated =  await localiData.json();
     }
+    
+  const initialEveryone = await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details-everyones`);
+    const Everyone = await initialEveryone.json();
+  
+    let Everyonetranslated =  undefined;
+  
+    if(locale=="de"){
+      const localiData =  await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details-everyones?_locale=de`)
+      Everyonetranslated =  await localiData.json();
+    }
     return {
         props: {
             data:translated?translated:data,
             Businessdata:Businesstranslated?Businesstranslated:Business,
+            Everyonedata:Everyonetranslated?Everyonetranslated:Everyone,
         },
     };
   };
 
-export default function Home({ data, Businessdata }) {
+export default function Home({ data, Businessdata, Everyonedata }) {
   return (
     <>
       <Head>
@@ -167,6 +179,7 @@ export default function Home({ data, Businessdata }) {
         </div>
 
         <WalletEveryone dataeveryone={Businessdata} />
+        <WalletBusiness databusiness={Everyonedata} className="hidden md:block" />
 
         <Contact />
         <Footer />
