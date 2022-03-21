@@ -152,29 +152,27 @@ export default function Home({ data, Businessdata, Everyonedata }) {
         <div className="hidden lg:block md:px-40 px-10 py-20">
           <div className="text-center text-4xl font-semibold mb-20">Choose your Wallet</div>
           <div className="flex flex-col md:flex-row justify-around">
-            <div className="">
-              <div className="flex flex-col justify-between w-80 md:w-96 h-96 text-white bg-teal-300 shadow-xl rounded-2xl p-10 font-semibold">
-                <div className="text-3xl">lipa Wallet</div>
-                <div className="text-xl my-5 font-normal">You top up your lipa wallet with bitcoin. And already you can start using bitcoin to pay your bills.</div>
-                <div className="flex justify-center ">
-                  <Link href="/wallet">
-                    <a className="px-8 rounded-full py-2 text-teal-300 bg-white">Learn More</a>
-                  </Link>
+            {data.section5_cards.map((item, index) => {
+              return (
+                <div className="" key={index}>
+                  <div className={`flex flex-col justify-between w-80 md:w-96 h-96 text-white shadow-xl rounded-2xl p-10 font-semibold ${item.coming_soon?"bg-teal-300":"bg-cyan-700"}`}>
+                    <div className="text-3xl">{item.heading}</div>
+                    <div className="text-xl my-5 font-normal">{item.description}</div>
+                    <div className="flex justify-center ">
+                      <Link href={item.button_link}>
+                      {/* className={`px-8 rounded-full py-2 bg-white ${item.coming_soon?"text-teal-300":"text-cyan-700"}`} */}
+                        <a  className={`px-8 rounded-full py-2 bg-white ${item.coming_soon?"text-teal-300":"text-cyan-700"}`}>{item.button_text}</a>
+                      </Link>
+                    </div>
+                  </div>
+                  {item.coming_soon? <div className="-ml-10 -mt-14">
+                    <Image src="/Images/comingsoon.png" alt="Landing Bottom" width="120px" height="120px" />
+                  </div> : null}
+                  
                 </div>
-              </div>
-              <div className="-ml-10 -mt-14">
-                <Image src="/Images/comingsoon.png" alt="Landing Bottom" width="120px" height="120px" />
-              </div>
-            </div>
-            <div className="flex flex-col justify-between w-80 md:w-96 h-96 text-white bg-cyan-700 shadow-xl rounded-2xl p-10 font-semibold">
-              <div className="text-3xl">lipa Wallet for Business</div>
-              <div className="text-xl my-5 font-normal">You register your business and install lipa on your main business phone. Your employees use their own device and receive bitcoin on your behalf</div>
-              <div className="flex justify-center ">
-                <Link href="/wallet">
-                  <a className="px-8 rounded-full py-2 text-teal-300 bg-white">Learn More</a>
-                </Link>
-              </div>
-            </div>
+              );
+            }
+            )}
           </div>
         </div>
 
