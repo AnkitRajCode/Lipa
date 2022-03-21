@@ -27,13 +27,35 @@ export const getStaticProps = async (context) => {
     translated =  await localiData.json();
   }
 
-  return {
-      props: {
-          data:translated?translated:data,
-      },
-  };
+
+  const initialtes = await fetch(`https://lipa-backend.herokuapp.com/testimonials`);
+    const datates = await initialtes.json();
+  
+    let translate =  undefined;
+  
+    if(locale=="de"){
+      const localiData =  await fetch(`https://lipa-backend.herokuapp.com/testimonials?_locale=de`)
+      translate =  await localiData.json();
+    }
+
+    const initialBusiness = await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details`);
+    const Business = await initialBusiness.json();
+  
+    let Businesstranslated =  undefined;
+  
+    if(locale=="de"){
+      const localiData =  await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details?_locale=de`)
+      Businesstranslated =  await localiData.json();
+    }
+    return {
+        props: {
+            data:translated?translated:data,
+            testimonials:translate?translate:datates,
+            Businessdata:Businesstranslated?Businesstranslated:Business,
+        },
+    };
 };
-const business = ({data}) => {
+const business = ({data,testimonials,Businessdata}) => {
   return (
     <div className='overflow-hidden'>
       <Head>
@@ -62,7 +84,7 @@ const business = ({data}) => {
                       {/* <Image src={item.image.url} alt={item.image.name} width={item.image.width} height={item.image.height} /> */}
                       <Image src={item.image.url} alt={item.image.name} width="300px" height="500px" />
                     </div>
-                    <div className="text-center text-2xl text-bold text-gray-600 md:my-5">{item.id}</div>
+                    <div className="text-center text-2xl text-bold text-gray-600 md:my-5">{index+1}</div>
                     <div className="text-center text-xl text-semibold">{item.description}</div>
                   </div>
                 );
@@ -94,8 +116,8 @@ const business = ({data}) => {
           </Swiper>
         </div>
 
-        {/* Public Opinion */}
-        {/* <Testimonials/> */}
+        {/* testimonial */}
+        <Testimonials testimonialsdata={testimonials} />
 
         {/* company logo */}
         <div className="px-5 md:px-40 py-10">
@@ -118,7 +140,7 @@ const business = ({data}) => {
           })}
         </div>
 
-        <WalletEveryone/>
+        <WalletEveryone dataeveryone={Businessdata} />
       <Footer />
     </div>
   )

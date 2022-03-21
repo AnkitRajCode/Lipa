@@ -31,14 +31,24 @@ export const getStaticProps = async (context) => {
     translated =  await localiData.json();
   }
 
-  return {
-    props: {
-      data:translated?translated:data,
-    },
+  const initialBusiness = await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details`);
+    const Business = await initialBusiness.json();
+  
+    let Businesstranslated =  undefined;
+  
+    if(locale=="de"){
+      const localiData =  await fetch(`https://lipa-backend.herokuapp.com/lipawallet-details?_locale=de`)
+      Businesstranslated =  await localiData.json();
+    }
+    return {
+        props: {
+            data:translated?translated:data,
+            Businessdata:Businesstranslated?Businesstranslated:Business,
+        },
+    };
   };
-};
 
-export default function Home({ data }) {
+export default function Home({ data, Businessdata }) {
   return (
     <>
       <Head>
@@ -156,8 +166,7 @@ export default function Home({ data }) {
           </div>
         </div>
 
-        {/* wallet for bussiness */}
-        <WalletEveryone />
+        <WalletEveryone dataeveryone={Businessdata} />
 
         <Contact />
         <Footer />
