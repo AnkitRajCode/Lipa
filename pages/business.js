@@ -52,7 +52,8 @@ export const getStaticProps = async (context) => {
             data:translated?translated:data,
             testimonials:translate?translate:datates,
             Businessdata:Businesstranslated?Businesstranslated:Business,
-        },
+      },
+      revalidate:1,
     };
 };
 const business = ({data,testimonials,Businessdata}) => {

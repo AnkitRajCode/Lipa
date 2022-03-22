@@ -21,6 +21,7 @@ export const getStaticProps = async (context) => {
         props: {
             data:translated?translated:data,
         },
+        revalidate:1,
     };
 };
 

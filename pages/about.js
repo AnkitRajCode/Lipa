@@ -28,7 +28,8 @@ export const getStaticProps = async (context) => {
     return {
         props: {
             data:translated?translated:data,
-        },
+      },
+      revalidate: 1,
     };
 };
 
