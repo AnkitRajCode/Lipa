@@ -13,8 +13,8 @@ const WalletBusiness = ({databusiness}) => {
               {databusiness[0].points.map((item, index) => {
                 return (
                   <div key={index + 1}>
-                    <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> {item.points[index].point1}</div>
-                    <div className="text-gray-400 ml-8"> {item.points[index].point2}</div>
+                    <div className="font-semibold text-gray-600 flex items-center"><i className="fa-solid fa-circle text-xs mr-5"></i> {item.point1}</div>
+                    <div className="text-gray-400 ml-8"> {item.point2}</div>
                   </div>
                 );
               })}
